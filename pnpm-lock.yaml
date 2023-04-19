@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@capi/westend': https://capi.dev/@v0.1.0-beta.34/b6404bc69a8e5567/westend.tar
+  '@capi/westend': https://capi.dev/@v0.1.0-beta.35/b6404bc69a8e5567/westend.tar
   '@polkadot/api': ^10.3.4
   '@polkadot/extension-dapp': ^0.45.5
   '@types/node': ^18.15.11
@@ -12,7 +12,7 @@ specifiers:
   vite: ^4.2.0
 
 dependencies:
-  '@capi/westend': '@capi.dev/@v0.1.0-beta.34/b6404bc69a8e5567/westend.tar_capi@0.1.0-beta.35'
+  '@capi/westend': '@capi.dev/@v0.1.0-beta.35/b6404bc69a8e5567/westend.tar_capi@0.1.0-beta.35'
   '@polkadot/api': 10.3.4
   '@polkadot/extension-dapp': 0.45.5_@polkadot+api@10.3.4
   ansi-to-html: 0.7.2
@@ -1190,17 +1190,6 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  '@capi.dev/@v0.1.0-beta.34/b6404bc69a8e5567/westend.tar_capi@0.1.0-beta.35':
-    resolution: {tarball: https://capi.dev/@v0.1.0-beta.34/b6404bc69a8e5567/westend.tar}
-    id: '@capi.dev/@v0.1.0-beta.34/b6404bc69a8e5567/westend.tar'
-    name: westend
-    version: 0.0.0-TODO
-    peerDependencies:
-      capi: '*'
-    dependencies:
-      capi: 0.1.0-beta.35
-    dev: false
-
   '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/contracts-dev.tar_capi@0.1.0-beta.35':
     resolution: {tarball: https://capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/contracts-dev.tar}
     id: '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/contracts-dev.tar'
@@ -1292,6 +1281,17 @@ packages:
   '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/westend.tar_capi@0.1.0-beta.35':
     resolution: {tarball: https://capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/westend.tar}
     id: '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/westend.tar'
+    name: westend
+    version: 0.0.0-TODO
+    peerDependencies:
+      capi: '*'
+    dependencies:
+      capi: 0.1.0-beta.35
+    dev: false
+
+  '@capi.dev/@v0.1.0-beta.35/b6404bc69a8e5567/westend.tar_capi@0.1.0-beta.35':
+    resolution: {tarball: https://capi.dev/@v0.1.0-beta.35/b6404bc69a8e5567/westend.tar}
+    id: '@capi.dev/@v0.1.0-beta.35/b6404bc69a8e5567/westend.tar'
     name: westend
     version: 0.0.0-TODO
     peerDependencies:
