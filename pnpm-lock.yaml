@@ -6,17 +6,17 @@ specifiers:
   '@polkadot/extension-dapp': ^0.45.5
   '@types/node': ^18.15.11
   ansi-to-html: ^0.7.2
-  capi: file:../capi/target/npm/capi-v0.0.0-local.tgz
+  capi: 0.1.0-beta.35
   ts-node: ^10.9.1
   typescript: ^4.9.3
   vite: ^4.2.0
 
 dependencies:
-  '@capi/westend': '@capi.dev/@v0.1.0-beta.34/b6404bc69a8e5567/westend.tar_capi@0.0.0-local'
+  '@capi/westend': '@capi.dev/@v0.1.0-beta.34/b6404bc69a8e5567/westend.tar_capi@0.1.0-beta.35'
   '@polkadot/api': 10.3.4
   '@polkadot/extension-dapp': 0.45.5_@polkadot+api@10.3.4
   ansi-to-html: 0.7.2
-  capi: file:../capi/target/npm/capi-v0.0.0-local.tgz
+  capi: 0.1.0-beta.35
 
 devDependencies:
   '@types/node': 18.15.11
@@ -776,6 +776,33 @@ packages:
     resolution: {integrity: sha512-eXRvHzWyYPBuB4NBy0cmYQjGitUrtqwbvlzP3G6VFnNRbsZQIxQ10PbKKHt8gZ/HW/D/747aDl+QkDqg3KQLMQ==}
     dev: false
 
+  /capi/0.1.0-beta.35:
+    resolution: {integrity: sha512-FHLesDKQIHzrzilrFM8FpX4f/xxGkRecjZWPYTIqbAbkQ9TxycPHgvMaaykng4axplAwKkdK8w8PA1KGPrVPeA==}
+    hasBin: true
+    dependencies:
+      '@capi/contracts-dev': '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/contracts-dev.tar_capi@0.1.0-beta.35'
+      '@capi/polkadot': '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/polkadot.tar_capi@0.1.0-beta.35'
+      '@capi/polkadot-dev': '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/polkadot-dev.tar_capi@0.1.0-beta.35'
+      '@capi/rococo-dev': '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/rococo-dev.tar_capi@0.1.0-beta.35'
+      '@capi/rococo-dev-xcm': '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/rococo-dev-xcm.tar_capi@0.1.0-beta.35'
+      '@capi/rococo-westmint': '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/rococo-westmint.tar_capi@0.1.0-beta.35'
+      '@capi/statemint': '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/statemint.tar_capi@0.1.0-beta.35'
+      '@capi/westend': '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/westend.tar_capi@0.1.0-beta.35'
+      '@capi/westend-dev': '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/westend-dev.tar_capi@0.1.0-beta.35'
+      '@deno/shim-crypto': 0.3.1
+      '@deno/shim-deno': 0.12.0
+      '@substrate/smoldot-light': 0.7.6
+      isomorphic-ws: 5.0.0_ws@8.13.0
+      scale-codec: 0.11.2
+      shiki: 0.14.1
+      tslib: 2.5.0
+      wat-the-crypto: 0.0.1
+      ws: 8.13.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+    dev: false
+
   /create-require/1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
     dev: true
@@ -1163,106 +1190,7 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/contracts-dev.tar_capi@0.0.0-local':
-    resolution: {tarball: https://capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/contracts-dev.tar}
-    id: '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/contracts-dev.tar'
-    name: contracts-dev
-    version: 0.0.0-TODO
-    peerDependencies:
-      capi: '*'
-    dependencies:
-      capi: file:../capi/target/npm/capi-v0.0.0-local.tgz
-    dev: false
-
-  '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/polkadot-dev.tar_capi@0.0.0-local':
-    resolution: {tarball: https://capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/polkadot-dev.tar}
-    id: '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/polkadot-dev.tar'
-    name: polkadot-dev
-    version: 0.0.0-TODO
-    peerDependencies:
-      capi: '*'
-    dependencies:
-      capi: file:../capi/target/npm/capi-v0.0.0-local.tgz
-    dev: false
-
-  '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/polkadot.tar_capi@0.0.0-local':
-    resolution: {tarball: https://capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/polkadot.tar}
-    id: '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/polkadot.tar'
-    name: polkadot
-    version: 0.0.0-TODO
-    peerDependencies:
-      capi: '*'
-    dependencies:
-      capi: file:../capi/target/npm/capi-v0.0.0-local.tgz
-    dev: false
-
-  '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/rococo-dev-xcm.tar_capi@0.0.0-local':
-    resolution: {tarball: https://capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/rococo-dev-xcm.tar}
-    id: '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/rococo-dev-xcm.tar'
-    name: rococo-dev-xcm
-    version: 0.0.0-TODO
-    peerDependencies:
-      capi: '*'
-    dependencies:
-      capi: file:../capi/target/npm/capi-v0.0.0-local.tgz
-    dev: false
-
-  '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/rococo-dev.tar_capi@0.0.0-local':
-    resolution: {tarball: https://capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/rococo-dev.tar}
-    id: '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/rococo-dev.tar'
-    name: rococo-dev
-    version: 0.0.0-TODO
-    peerDependencies:
-      capi: '*'
-    dependencies:
-      capi: file:../capi/target/npm/capi-v0.0.0-local.tgz
-    dev: false
-
-  '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/rococo-westmint.tar_capi@0.0.0-local':
-    resolution: {tarball: https://capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/rococo-westmint.tar}
-    id: '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/rococo-westmint.tar'
-    name: rococo-westmint
-    version: 0.0.0-TODO
-    peerDependencies:
-      capi: '*'
-    dependencies:
-      capi: file:../capi/target/npm/capi-v0.0.0-local.tgz
-    dev: false
-
-  '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/statemint.tar_capi@0.0.0-local':
-    resolution: {tarball: https://capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/statemint.tar}
-    id: '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/statemint.tar'
-    name: statemint
-    version: 0.0.0-TODO
-    peerDependencies:
-      capi: '*'
-    dependencies:
-      capi: file:../capi/target/npm/capi-v0.0.0-local.tgz
-    dev: false
-
-  '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/westend-dev.tar_capi@0.0.0-local':
-    resolution: {tarball: https://capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/westend-dev.tar}
-    id: '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/westend-dev.tar'
-    name: westend-dev
-    version: 0.0.0-TODO
-    peerDependencies:
-      capi: '*'
-    dependencies:
-      capi: file:../capi/target/npm/capi-v0.0.0-local.tgz
-    dev: false
-
-  '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/westend.tar_capi@0.0.0-local':
-    resolution: {tarball: https://capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/westend.tar}
-    id: '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/westend.tar'
-    name: westend
-    version: 0.0.0-TODO
-    peerDependencies:
-      capi: '*'
-    dependencies:
-      capi: file:../capi/target/npm/capi-v0.0.0-local.tgz
-    dev: false
-
-  '@capi.dev/@v0.1.0-beta.34/b6404bc69a8e5567/westend.tar_capi@0.0.0-local':
+  '@capi.dev/@v0.1.0-beta.34/b6404bc69a8e5567/westend.tar_capi@0.1.0-beta.35':
     resolution: {tarball: https://capi.dev/@v0.1.0-beta.34/b6404bc69a8e5567/westend.tar}
     id: '@capi.dev/@v0.1.0-beta.34/b6404bc69a8e5567/westend.tar'
     name: westend
@@ -1270,34 +1198,104 @@ packages:
     peerDependencies:
       capi: '*'
     dependencies:
-      capi: file:../capi/target/npm/capi-v0.0.0-local.tgz
+      capi: 0.1.0-beta.35
     dev: false
 
-  file:../capi/target/npm/capi-v0.0.0-local.tgz:
-    resolution: {integrity: sha512-7tKxf8qKK7YFOjthhGehVAX/XaQ9QQwIdaXoJcHqw7f1Bih+i0Guaje6ia/i2JD7L6Et5IPdH7QbkMVWN7aeGQ==, tarball: file:../capi/target/npm/capi-v0.0.0-local.tgz}
-    name: capi
-    version: 0.0.0-local
-    hasBin: true
+  '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/contracts-dev.tar_capi@0.1.0-beta.35':
+    resolution: {tarball: https://capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/contracts-dev.tar}
+    id: '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/contracts-dev.tar'
+    name: contracts-dev
+    version: 0.0.0-TODO
+    peerDependencies:
+      capi: '*'
     dependencies:
-      '@capi/contracts-dev': '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/contracts-dev.tar_capi@0.0.0-local'
-      '@capi/polkadot': '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/polkadot.tar_capi@0.0.0-local'
-      '@capi/polkadot-dev': '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/polkadot-dev.tar_capi@0.0.0-local'
-      '@capi/rococo-dev': '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/rococo-dev.tar_capi@0.0.0-local'
-      '@capi/rococo-dev-xcm': '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/rococo-dev-xcm.tar_capi@0.0.0-local'
-      '@capi/rococo-westmint': '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/rococo-westmint.tar_capi@0.0.0-local'
-      '@capi/statemint': '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/statemint.tar_capi@0.0.0-local'
-      '@capi/westend': '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/westend.tar_capi@0.0.0-local'
-      '@capi/westend-dev': '@capi.dev/@v0.1.0-beta.34/29dcd8564faca56b/westend-dev.tar_capi@0.0.0-local'
-      '@deno/shim-crypto': 0.3.1
-      '@deno/shim-deno': 0.12.0
-      '@substrate/smoldot-light': 0.7.6
-      isomorphic-ws: 5.0.0_ws@8.13.0
-      scale-codec: 0.11.2
-      shiki: 0.14.1
-      tslib: 2.5.0
-      wat-the-crypto: 0.0.1
-      ws: 8.13.0
-    transitivePeerDependencies:
-      - bufferutil
-      - utf-8-validate
+      capi: 0.1.0-beta.35
+    dev: false
+
+  '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/polkadot-dev.tar_capi@0.1.0-beta.35':
+    resolution: {tarball: https://capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/polkadot-dev.tar}
+    id: '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/polkadot-dev.tar'
+    name: polkadot-dev
+    version: 0.0.0-TODO
+    peerDependencies:
+      capi: '*'
+    dependencies:
+      capi: 0.1.0-beta.35
+    dev: false
+
+  '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/polkadot.tar_capi@0.1.0-beta.35':
+    resolution: {tarball: https://capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/polkadot.tar}
+    id: '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/polkadot.tar'
+    name: polkadot
+    version: 0.0.0-TODO
+    peerDependencies:
+      capi: '*'
+    dependencies:
+      capi: 0.1.0-beta.35
+    dev: false
+
+  '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/rococo-dev-xcm.tar_capi@0.1.0-beta.35':
+    resolution: {tarball: https://capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/rococo-dev-xcm.tar}
+    id: '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/rococo-dev-xcm.tar'
+    name: rococo-dev-xcm
+    version: 0.0.0-TODO
+    peerDependencies:
+      capi: '*'
+    dependencies:
+      capi: 0.1.0-beta.35
+    dev: false
+
+  '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/rococo-dev.tar_capi@0.1.0-beta.35':
+    resolution: {tarball: https://capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/rococo-dev.tar}
+    id: '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/rococo-dev.tar'
+    name: rococo-dev
+    version: 0.0.0-TODO
+    peerDependencies:
+      capi: '*'
+    dependencies:
+      capi: 0.1.0-beta.35
+    dev: false
+
+  '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/rococo-westmint.tar_capi@0.1.0-beta.35':
+    resolution: {tarball: https://capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/rococo-westmint.tar}
+    id: '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/rococo-westmint.tar'
+    name: rococo-westmint
+    version: 0.0.0-TODO
+    peerDependencies:
+      capi: '*'
+    dependencies:
+      capi: 0.1.0-beta.35
+    dev: false
+
+  '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/statemint.tar_capi@0.1.0-beta.35':
+    resolution: {tarball: https://capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/statemint.tar}
+    id: '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/statemint.tar'
+    name: statemint
+    version: 0.0.0-TODO
+    peerDependencies:
+      capi: '*'
+    dependencies:
+      capi: 0.1.0-beta.35
+    dev: false
+
+  '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/westend-dev.tar_capi@0.1.0-beta.35':
+    resolution: {tarball: https://capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/westend-dev.tar}
+    id: '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/westend-dev.tar'
+    name: westend-dev
+    version: 0.0.0-TODO
+    peerDependencies:
+      capi: '*'
+    dependencies:
+      capi: 0.1.0-beta.35
+    dev: false
+
+  '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/westend.tar_capi@0.1.0-beta.35':
+    resolution: {tarball: https://capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/westend.tar}
+    id: '@capi.dev/@v0.1.0-beta.35/29dcd8564faca56b/westend.tar'
+    name: westend
+    version: 0.0.0-TODO
+    peerDependencies:
+      capi: '*'
+    dependencies:
+      capi: 0.1.0-beta.35
     dev: false
