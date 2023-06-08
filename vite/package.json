@@ -1,0 +1,23 @@
+{
+  "name": "capi-vite-examples",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "",
+  "dependencies": {
+    "@polkadot/api": "^10.3.4",
+    "@polkadot/extension-dapp": "^0.45.5",
+    "ansi-to-html": "^0.7.2"
+  },
+  "devDependencies": {
+    "vite": "^4.2.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
