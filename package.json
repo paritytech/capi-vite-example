@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "sync": "capi sync --package-json package.json"
+    "sync": "capi sync node --runtime-config package.json --server https://capi.dev"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
@@ -16,10 +16,10 @@
     "vite": "^4.2.0"
   },
   "dependencies": {
-    "@capi/westend": "https://capi.dev/9fccbde64e0e4b10/westend.tar",
+    "@capi/westend": "https://capi.dev/a416a0563f132155/westend.tar",
     "@polkadot/api": "^10.3.4",
     "@polkadot/extension-dapp": "^0.45.5",
     "ansi-to-html": "^0.7.2",
-    "capi": "0.1.0-beta.37"
+    "capi": "0.1.0-beta.40"
   }
 }
