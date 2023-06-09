@@ -1,5 +1,5 @@
 {
   "extends": "./tsconfig.base.json",
   "files": [],
-  "references": [{ "path": "vite" }, { "path": "next" }]
+  "references": [{ "path": "vite" }, { "path": "next" }, { "path": "common" }]
 }

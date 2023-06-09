@@ -1,9 +1,34 @@
-import Image from 'next/image'
+import { web3Accounts, web3Enable, web3FromSource } from "@polkadot/extension-dapp"
+import Image from "next/image.js"
+import { useEffect, useState } from "react"
 
 export default function Home() {
+  const [users, setUsers] = useState()
+
+  useEffect(() => {
+    ;(async () => {
+      await web3Accounts()
+    })()
+  })
+
+  const Web3Selector = ({ id, spanText }: { id: string; spanText: string }) => (
+    <div>
+      <label>
+        <span>{spanText}</span>
+        <select id={id}></select>
+      </label>
+    </div>
+  )
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+    <main className="flex min-h-screen flex-col justify-between p-24">
+      <section className="prose">
+        <h1>Transfer</h1>
+        <Web3Selector id="alice" spanText="From:" />
+        <Web3Selector id="billy" spanText="To:" />
+      </section>
+      {
+        /*       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
           Get started by editing&nbsp;
           <code className="font-mono font-bold">src/app/page.tsx</code>
@@ -107,7 +132,8 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
-      </div>
+      </div> */
+      }
     </main>
   )
 }

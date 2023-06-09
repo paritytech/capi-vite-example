@@ -5,8 +5,7 @@
   "type": "module",
   "description": "",
   "dependencies": {
-    "@polkadot/api": "^10.3.4",
-    "@polkadot/extension-dapp": "^0.45.5",
+    "common": "workspace:*",
     "ansi-to-html": "^0.7.2"
   },
   "devDependencies": {
