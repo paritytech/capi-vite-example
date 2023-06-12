@@ -1,4 +1,5 @@
 packages:
   - next
   - vite
+  - angular
   - common

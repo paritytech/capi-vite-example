@@ -3,5 +3,9 @@
   "private": true,
   "type": "module",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@capi/westend": "https://capi.dev/a416a0563f132155/westend.tar",
+    "capi": "0.1.0-beta.42"
+  }
 }
