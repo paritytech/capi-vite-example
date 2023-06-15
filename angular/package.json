@@ -23,6 +23,7 @@
     "@capi/westend": "https://capi.dev/a416a0563f132155/westend.tar",
     "@polkadot/api": "^10.3.4",
     "@polkadot/extension-dapp": "^0.45.5",
+    "ansi-to-html": "^0.7.2",
     "capi": "0.1.0-beta.42",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
