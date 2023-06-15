@@ -1,0 +1,29 @@
+<section>
+  <h1>Transfer</h1>
+  <div>
+    <label><span>From: </span>
+      <select id="alexa" [(ngModel)]="alexaIndex">
+        <option *ngFor="let user of users; index as i" value={{i}}>{{ user.name }}</option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <label><span>To: </span>
+      <select id="billy" [(ngModel)]="billyIndex">
+        <option *ngFor="let user of users; index as i" value={{i}}>{{ user.name }}</option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <label><span>Amount: </span>
+      <input id="amount" type="number" value="12345" min="0" step="1" [(ngModel)]="amount" />
+    </label>
+  </div>
+  <div><button id="submit" (click)="transfer()">Submit</button></div>
+</section>
+<section id="logs">
+  <h1>Logs</h1>
+  <pre id="log"></pre>
+</section>
+
+<router-outlet></router-outlet>
