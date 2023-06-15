@@ -1,9 +1,8 @@
 {
   "name": "capi-vite-example",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "",
   "dependencies": {
     "@capi/westend": "https://capi.dev/a416a0563f132155/westend.tar",
     "@polkadot/api": "^10.3.4",
@@ -20,7 +19,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sync": "capi sync node --runtime-config package.json --server https://capi.dev"
   },
   "keywords": [],
   "author": "",
