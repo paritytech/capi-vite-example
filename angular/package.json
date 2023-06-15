@@ -7,7 +7,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "sync": "capi sync node --runtime-config package.json --server https://capi.dev"
   },
   "private": true,
   "dependencies": {
@@ -19,12 +20,16 @@
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
-    "common": "workspace:*",
+    "@capi/westend": "https://capi.dev/a416a0563f132155/westend.tar",
+    "@polkadot/api": "^10.3.4",
+    "@polkadot/extension-dapp": "^0.45.5",
+    "capi": "0.1.0-beta.42",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^16.0.0",
     "@angular-devkit/build-angular": "^16.0.5",
     "@angular/cli": "~16.0.5",
     "@angular/compiler-cli": "^16.0.0",
@@ -35,6 +40,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "ts-node": "^10.9.1",
     "typescript": "~5.0.2"
   }
 }

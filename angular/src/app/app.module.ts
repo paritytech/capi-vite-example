@@ -1,8 +1,14 @@
-import { NgModule } from "@angular/core"
+import { APP_INITIALIZER, NgModule } from "@angular/core"
 import { BrowserModule } from "@angular/platform-browser"
 
+import { web3Enable } from "@polkadot/extension-dapp"
 import { AppRoutingModule } from "./app-routing.module"
 import { AppComponent } from "./app.component"
+import { Web3Service } from "./web3.service"
+
+async function initializeApp() {
+  await web3Enable("capi-next-example")
+}
 
 @NgModule({
   declarations: [
@@ -12,7 +18,12 @@ import { AppComponent } from "./app.component"
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [],
+
+  providers: [{
+    provide: APP_INITIALIZER,
+    useFactory: () => initializeApp,
+    multi: true,
+  }, Web3Service],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
