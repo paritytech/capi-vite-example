@@ -19,11 +19,11 @@ async function initializeApp() {
     AppRoutingModule,
   ],
 
-  providers: [{
+  providers: [Web3Service, {
     provide: APP_INITIALIZER,
     useFactory: () => initializeApp,
     multi: true,
-  }, Web3Service],
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

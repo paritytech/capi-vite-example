@@ -12,19 +12,11 @@ import { Web3Service } from "./web3.service"
 export class AppComponent {
   title = "capi-angular-example"
 
+  users: Promise<User[]> | null = null
+
   constructor(private readonly web3Service: Web3Service) {}
 
-  async ngOnInit() {
-    /*     const users = this.web3Service.users()
-    console.log(users) */
-    /*     await web3Enable("capi-next-example")
-    const web3Source = await web3FromSource("polkadot-js")
-    const accounts = await web3Accounts()
-
-    const users = accounts.map(
-      (account, i) => new User(account.address, account.meta.name ?? `Account ${i}`),
-    )
-
-    console.log("hello world", users) */
+  ngOnInit() {
+    this.users = this.web3Service.users()
   }
 }

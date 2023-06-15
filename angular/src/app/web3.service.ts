@@ -13,7 +13,7 @@ export class Web3Service {
     const accounts = await web3Accounts()
 
     const users = accounts.map(
-      (account, i) => new User(account.address, account.meta.name ?? `Account ${i}`),
+      (account, i) => new User(web3Source, account.address, account.meta.name ?? `Account ${i}`),
     )
 
     return users
