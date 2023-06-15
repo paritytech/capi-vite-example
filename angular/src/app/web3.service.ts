@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core"
-import { web3Accounts, web3Enable, web3FromSource } from "@polkadot/extension-dapp"
+import { web3Accounts, web3FromSource } from "@polkadot/extension-dapp"
 import { User } from "./user"
 
 @Injectable({

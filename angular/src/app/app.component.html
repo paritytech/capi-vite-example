@@ -16,14 +16,13 @@
   </div>
   <div>
     <label><span>Amount: </span>
-      <input id="amount" type="number" value="12345" min="0" step="1" [(ngModel)]="amount" />
+      <input id="amount" type="number" min="0" step="1" [(ngModel)]="amount" />
     </label>
   </div>
   <div><button id="submit" (click)="transfer()">Submit</button></div>
 </section>
 <section id="logs">
-  <h1>Logs</h1>
-  <pre id="log"></pre>
+  <h1>Check console for logs</h1>
 </section>
 
 <router-outlet></router-outlet>

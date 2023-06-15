@@ -15,7 +15,7 @@ export class AppComponent {
 
   alexaIndex: number = -1
   billyIndex: number = -1
-  amount: bigint = 0n
+  amount: bigint = 12345n
   users: User[] = []
 
   constructor(private readonly web3Service: Web3Service) {}
