@@ -1,14 +1,14 @@
 import "./style.css"
 import "./console.js"
 
-import { Balances, chain, MultiAddress, System } from "@capi/westend"
+import { MultiAddress, westend } from "@capi/westend"
 import { web3Accounts, web3Enable, web3FromSource } from "@polkadot/extension-dapp"
 import { ss58 } from "capi"
 import { pjsSender } from "capi/patterns/compat/pjs_sender"
 import { signature } from "capi/patterns/signature/polkadot"
 
 const extensions = await web3Enable("capi-vite-example")
-const sender = pjsSender(chain, (await web3FromSource("polkadot-js")).signer as any)
+const sender = pjsSender(westend, (await web3FromSource("polkadot-js")).signer as any)
 
 class User {
   publicKey
@@ -48,7 +48,7 @@ function populateUserDropdown(select: Element) {
 
 async function transfer(alexa: User, billy: User, amount: bigint) {
   // Reference Billy's free balance.
-  const billyFree = System.Account
+  const billyFree = westend.System.Account
     .value(billy.publicKey)
     .unhandle(undefined)
     .access("data", "free")
@@ -58,8 +58,8 @@ async function transfer(alexa: User, billy: User, amount: bigint) {
   console.log("Billy free initial:", initialFree)
 
   // Create and submit the transaction.
-  await Balances
-    .transfer({
+  await westend.Balances
+    .transferAllowDeath({
       value: amount,
       dest: billy.address,
     })
