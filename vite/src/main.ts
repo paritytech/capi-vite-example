@@ -3,7 +3,7 @@ import "./console.js"
 
 import { MultiAddress, westend } from "@capi/westend"
 import { web3Accounts, web3Enable, web3FromSource } from "@polkadot/extension-dapp"
-import { ss58 } from "capi"
+import { is, ss58 } from "capi"
 import { pjsSender } from "capi/patterns/compat/pjs_sender"
 import { signature } from "capi/patterns/signature/polkadot"
 
@@ -33,7 +33,11 @@ const submitButton = document.getElementById("submit") as HTMLButtonElement
 populateUserDropdown(alexaDropdown)
 populateUserDropdown(billyDropdown)
 submitButton.addEventListener("click", () => {
-  transfer(users[+alexaDropdown.value], users[+billyDropdown.value], BigInt(amountInput.value))
+  transfer(
+    users[+alexaDropdown.value],
+    users[+billyDropdown.value],
+    BigInt(amountInput.value),
+  )
 })
 
 function populateUserDropdown(select: Element) {
@@ -48,9 +52,8 @@ function populateUserDropdown(select: Element) {
 
 async function transfer(alexa: User, billy: User, amount: bigint) {
   // Reference Billy's free balance.
-  const billyFree = westend.System.Account
-    .value(billy.publicKey)
-    .unhandle(undefined)
+  const billyFree = westend.System.Account.value(billy.publicKey)
+    .unhandle(is(undefined))
     .access("data", "free")
 
   // Read the initial free.
@@ -58,11 +61,10 @@ async function transfer(alexa: User, billy: User, amount: bigint) {
   console.log("Billy free initial:", initialFree)
 
   // Create and submit the transaction.
-  await westend.Balances
-    .transferAllowDeath({
-      value: amount,
-      dest: billy.address,
-    })
+  await westend.Balances.transferAllowDeath({
+    value: amount,
+    dest: billy.address,
+  })
     .signed(signature({ sender: alexa.sender }))
     .sent()
     .dbgStatus("Transfer:")
