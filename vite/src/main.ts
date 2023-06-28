@@ -3,7 +3,7 @@ import "./console.js"
 
 import { MultiAddress, westend } from "@capi/westend"
 import { web3Accounts, web3Enable, web3FromSource } from "@polkadot/extension-dapp"
-import { ss58 } from "capi"
+import { is, ss58 } from "capi"
 import { pjsSender } from "capi/patterns/compat/pjs_sender"
 import { signature } from "capi/patterns/signature/polkadot"
 
@@ -53,7 +53,7 @@ function populateUserDropdown(select: Element) {
 async function transfer(alexa: User, billy: User, amount: bigint) {
   // Reference Billy's free balance.
   const billyFree = westend.System.Account.value(billy.publicKey)
-    .unhandle(undefined)
+    .unhandle(is(undefined))
     .access("data", "free")
 
   // Read the initial free.
