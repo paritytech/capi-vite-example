@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "sync": "capi sync node --runtime-config package.json --server https://capi.dev"
+    "sync": "capi sync node --server https://capi.dev"
   },
   "private": true,
   "dependencies": {
@@ -24,7 +24,7 @@
     "@polkadot/api": "^10.3.4",
     "@polkadot/extension-dapp": "^0.45.5",
     "ansi-to-html": "^0.7.2",
-    "capi": "0.1.0-beta.42",
+    "capi": "0.1.0-beta.49",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

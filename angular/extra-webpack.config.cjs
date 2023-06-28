@@ -5,7 +5,7 @@ module.exports = {
   externals: {
     "node:net": {},
     "node:stream": {},
-    "node:fs/promises": {},
+    "node:fs": {},
     bufferutil: {},
     "utf-8-validate": {},
   },

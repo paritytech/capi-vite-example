@@ -2,6 +2,7 @@ import { Component } from "@angular/core"
 import { westend } from "@capi/westend"
 import { signature } from "capi/patterns/signature/polkadot"
 
+import { is } from "capi"
 import { User } from "./user"
 import { Web3Service } from "./web3.service"
 
@@ -31,7 +32,7 @@ export class AppComponent {
 
     // Reference Billy's free balance.
     const billyFree = westend.System.Account.value(billy.publicKey)
-      .unhandle(undefined)
+      .unhandle(is(undefined))
       .access("data", "free")
 
     // Read the initial free.
