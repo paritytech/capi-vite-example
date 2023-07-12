@@ -1,5 +1,5 @@
 {
-  "name": "test-rollup-example",
+  "name": "capi-rollup-example",
   "type": "module",
   "devDependencies": {
     "@parcel/config-default": "^2.9.3",
