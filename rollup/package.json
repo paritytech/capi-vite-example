@@ -13,8 +13,8 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@capi/polkadot": "https://capi.dev/@v0.1.0-gamma.1/2a5af7b60a2b56b9/polkadot.tar",
-    "@capi/westend": "https://capi.dev/@v0.1.0-gamma.1/2a5af7b60a2b56b9/westend.tar",
+    "@capi/westend": "https://capi.dev/@v0.1.0-gamma.1/4404625f9fa4465d/westend.tar",
+    "@capi/westend-dev": "https://capi.dev/@v0.1.0-gamma.1/4404625f9fa4465d/westend-dev.tar",
     "@polkadot/extension-dapp": "^0.46.5",
     "ansi-to-html": "^0.7.2",
     "capi": "0.1.0-gamma.1",

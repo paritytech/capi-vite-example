@@ -1,15 +1,20 @@
 import "./style.css"
 import "./console.js"
 
-import { MultiAddress, polkadot } from "@capi/polkadot"
+import { MultiAddress, westend } from "@capi/westend"
 import { web3Accounts, web3Enable, web3FromSource } from "@polkadot/extension-dapp"
 import { is, ss58 } from "capi"
 import { pjsSender } from "capi/patterns/compat/pjs_sender"
 import { signature } from "capi/patterns/signature/polkadot"
 
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+
 async function main() {
+  // TODO: remove delay because there is a race condition when trying to find
+  // the polkadot-js web extension and waiting it to load in the browser.
+  await delay(1000)
   await web3Enable("capi-parcel-example")
-  const sender = pjsSender(polkadot, (await web3FromSource("polkadot-js")).signer as any)
+  const sender = pjsSender(westend, (await web3FromSource("polkadot-js")).signer as any)
 
   class User {
     publicKey
@@ -49,7 +54,7 @@ async function main() {
 
   async function transfer(alexa: User, billy: User, amount: bigint) {
     // Reference Billy's free balance.
-    const billyFree = polkadot.System.Account
+    const billyFree = westend.System.Account
       .value(billy.publicKey)
       .unhandle(is(undefined))
       .access("data", "free")
@@ -59,7 +64,7 @@ async function main() {
     console.log("Billy free initial:", initialFree)
 
     // Create and submit the transaction.
-    await polkadot.Balances
+    await westend.Balances
       .transferAllowDeath({
         value: amount,
         dest: billy.address,
