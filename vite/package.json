@@ -21,6 +21,6 @@
     "@polkadot/api": "^10.3.4",
     "@polkadot/extension-dapp": "^0.45.5",
     "ansi-to-html": "^0.7.2",
-    "capi": "0.1.0-gamma.1"
+    "capi": "0.1.1-beta.1"
   }
 }
