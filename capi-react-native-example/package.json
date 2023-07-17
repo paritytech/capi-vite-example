@@ -13,7 +13,6 @@
     "@capi/westend": "https://capi.dev/@v0.1.0-gamma.1/4404625f9fa4465d/westend.tar",
     "@capi/westend-dev": "https://capi.dev/@v0.1.0-gamma.1/4404625f9fa4465d/westend-dev.tar",
     "@expo/webpack-config": "^18.0.1",
-    "@polkadot/extension-dapp": "^0.46.5",
     "capi": "0.1.0-gamma.1",
     "expo": "~48.0.18",
     "expo-status-bar": "~1.4.4",
