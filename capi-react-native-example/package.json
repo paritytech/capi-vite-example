@@ -1,0 +1,31 @@
+{
+  "name": "capi-react-native-example",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "sync": "capi sync node"
+  },
+  "dependencies": {
+    "@capi/westend": "https://capi.dev/@v0.1.0-gamma.1/4404625f9fa4465d/westend.tar",
+    "@capi/westend-dev": "https://capi.dev/@v0.1.0-gamma.1/4404625f9fa4465d/westend-dev.tar",
+    "@expo/webpack-config": "^18.0.1",
+    "@polkadot/extension-dapp": "^0.46.5",
+    "capi": "0.1.0-gamma.1",
+    "expo": "~48.0.18",
+    "expo-status-bar": "~1.4.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.71.8",
+    "react-native-web": "~0.18.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@types/react": "~18.0.14",
+    "typescript": "^4.9.4"
+  },
+  "private": true
+}

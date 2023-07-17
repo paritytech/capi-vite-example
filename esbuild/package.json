@@ -1,15 +1,12 @@
 {
-  "name": "capi-rollup-example",
+  "name": "capi-esbuild-example",
   "type": "module",
   "devDependencies": {
     "@parcel/config-default": "^2.9.3",
     "@parcel/resolver-default": "^2.9.3",
     "@parcel/transformer-js": "^2.9.3",
     "@types/node": "^20.4.0",
-    "buffer": "^5.5.0||^6.0.0",
-    "parcel": "2.9.3",
-    "parcel-transformer-capi": "0.0.2",
-    "process": "^0.11.10",
+    "buffer": "^6.0.3",
     "typescript": "^5.1.6"
   },
   "dependencies": {
@@ -17,12 +14,13 @@
     "@capi/westend-dev": "https://capi.dev/@v0.1.0-gamma.1/4404625f9fa4465d/westend-dev.tar",
     "@polkadot/extension-dapp": "^0.46.5",
     "ansi-to-html": "^0.7.2",
-    "capi": "0.1.0-gamma.1"
+    "capi": "0.1.0-gamma.1",
+    "vite": "4.3.9"
   },
   "scripts": {
     "clean": "rm -rf node_modules dist .parcel-cache",
     "sync": "capi sync node",
-    "start": "parcel serve src/index.html",
+    "start": "capi serve -- parcel serve src/index.html",
     "dev": "capi serve --target dev -- parcel serve src/index.html",
     "build": "parcel build src/index.html"
   },

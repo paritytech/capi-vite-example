@@ -1,9 +1,10 @@
 import "./style.css"
 import "./console.js"
 
-import { MultiAddress, westend } from "@capi/westend"
+import { MultiAddress, Westend, westend } from "@capi/westend"
+/* import { westendDev } from "@capi/westend-dev" */
 import { web3Accounts, web3Enable, web3FromSource } from "@polkadot/extension-dapp"
-import { is, ss58 } from "capi"
+import { createDevUsers, ExtrinsicSender, is, Rune, RunicArgs, ss58 } from "capi"
 import { pjsSender } from "capi/patterns/compat/pjs_sender"
 import { signature } from "capi/patterns/signature/polkadot"
 
@@ -39,7 +40,13 @@ async function main() {
   populateUserDropdown(alexaDropdown)
   populateUserDropdown(billyDropdown)
   submitButton.addEventListener("click", () => {
-    transfer(users[+alexaDropdown.value], users[+billyDropdown.value], BigInt(amountInput.value))
+    process.env.CAPI_TARGET === "dev"
+      ? transferDev(BigInt(amountInput.value))
+      : transfer(
+        users[+alexaDropdown.value].sender,
+        users[+billyDropdown.value].address,
+        BigInt(amountInput.value),
+      )
   })
 
   function populateUserDropdown(select: Element) {
@@ -52,7 +59,43 @@ async function main() {
     return select
   }
 
-  async function transfer(alexa: User, billy: User, amount: bigint) {
+  async function transfer<X>(
+    ...args: RunicArgs<X, [alexa: ExtrinsicSender<Westend>, billy: MultiAddress, amount: bigint]>
+  ) {
+    const alexa = Rune.resolve(args[0])
+    const billy = Rune.resolve(args[1])
+    const amount = Rune.resolve(args[2])
+    // Reference Billy's free balance.
+    const billyFree = westend.System.Account
+      .value(billy.access("value").unhandle(is(null)))
+      .unhandle(is(undefined))
+      .access("data", "free")
+
+    // Read the initial free.
+    const initialFree = await billyFree.run()
+    console.log("Billy free initial:", initialFree)
+
+    // Create and submit the transaction.
+    await westend.Balances
+      .transferAllowDeath({
+        value: amount,
+        dest: billy,
+      })
+      .signed(signature({ sender: alexa }))
+      .sent()
+      .dbgStatus("Transfer:")
+      .finalized()
+      .run()
+
+    // Read the final free.
+    const finalFree = await billyFree.run()
+    console.log("Billy free final:", finalFree)
+  }
+
+  async function transferDev(amount: bigint) {
+    console.log("transfer dev")
+    const { alexa, billy } = await createDevUsers()
+
     // Reference Billy's free balance.
     const billyFree = westend.System.Account
       .value(billy.publicKey)
@@ -69,7 +112,7 @@ async function main() {
         value: amount,
         dest: billy.address,
       })
-      .signed(signature({ sender: alexa.sender }))
+      .signed(signature({ sender: alexa }))
       .sent()
       .dbgStatus("Transfer:")
       .finalized()
