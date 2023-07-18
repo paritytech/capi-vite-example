@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "capi serve --target dev -- vite",
+    "start": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "sync": "capi sync node"
