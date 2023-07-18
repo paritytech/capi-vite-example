@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig } from "vite"
 
 export default defineConfig({
   plugins: [],
@@ -12,7 +12,7 @@ export default defineConfig({
     esbuildOptions: { target: "es2022" },
   },
   define: {
-    "process.env.CAPI_SERVER": process.env.CAPI_SERVER,
-    "process.env.CAPI_TARGET": process.env.CAPI_TARGET,
+    "process.env.CAPI_SERVER": JSON.stringify(process.env.CAPI_SERVER),
+    "process.env.CAPI_TARGET": JSON.stringify(process.env.CAPI_TARGET),
   },
-});
+})
