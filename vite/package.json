@@ -1,0 +1,27 @@
+{
+  "name": "capi-vite-example",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "capi serve --target dev -- vite",
+    "start": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "sync": "capi sync node"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.4"
+  },
+  "dependencies": {
+    "@capi/westend": "https://capi.dev/@v0.1.1-beta.1/4404625f9fa4465d/westend.tar",
+    "@capi/westend-dev": "https://capi.dev/@v0.1.1-beta.1/4404625f9fa4465d/westend-dev.tar",
+    "@polkadot/api": "^10.3.4",
+    "@polkadot/extension-dapp": "^0.45.5",
+    "ansi-to-html": "^0.7.2",
+    "capi": "0.1.1-beta.1"
+  }
+}
