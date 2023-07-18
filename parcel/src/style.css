@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+}
+
+body,
+html {
+  display: inline-flex !important;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
+}
+
+section {
+  padding: 1em;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+#logs {
+  flex-grow: 1;
+  background-color: black;
+  color: white;
+  width: 100%;
+}
